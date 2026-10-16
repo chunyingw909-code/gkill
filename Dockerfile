@@ -5,7 +5,7 @@ COPY . .
 RUN npm ci && npm run prepare_install
 
 # 2. 编译 Go 服务端
-FROM golang:1.26.6-bookworm AS builder
+FROM golang:1.26.9-bookworm AS builder
 WORKDIR /work
 COPY --from=frontend /work/src/server ./src/server
 WORKDIR /work/src/server/gkill/main/gkill_server
